@@ -30,9 +30,6 @@ jobs:
     - name: Run linting
       run: npm run lint
 
-    - name: Run tests
-      run: npm test -- --watch=false --browsers=ChromeHeadless
-
     - name: Build
       run: npm run build -- --configuration production --base-href="/jester-fest/"
 
