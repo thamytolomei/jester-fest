@@ -1,0 +1,232 @@
+   @keyframes slideIn {
+     0% {
+       transform: translateX(100%);
+       opacity: 0;
+     }
+
+     100% {
+       transform: translateX(0%);
+       opacity: 1;
+     }
+   }
+
+   /* Animação de saída */
+   @keyframes slideOut {
+     0% {
+       transform: translateX(0%);
+       opacity: 1;
+     }
+
+     100% {
+       transform: translateX(-100%);
+       opacity: 0;
+     }
+   }
+
+   .navbar {
+     position: absolute;
+     top: 0px;
+     left: 0px;
+     width: calc(100% - 5rem);
+     height: 10vh;
+     display: flex;
+     align-items: center;
+     flex-direction: row;
+     justify-content: space-between;
+     padding: 1.5rem 2.5rem;
+     z-index: 4;
+
+     @media screen and (max-width: 768px) {
+       padding: 1.5rem;
+       width: calc(100% - 3rem);
+     }
+
+     .logo {
+       display: block;
+       width: 6rem;
+       height: auto;
+
+       app-svg-icons,
+       ::ng-deep svg {
+         width: 100%;
+         height: 100%;
+         color: white;
+       }
+     }
+
+     .title-container {
+       h1 {
+         font-family: "Chroma Jeans";
+         font-size: 25px;
+         color: white;
+         letter-spacing: 6px;
+         margin: 0px;
+       }
+     }
+
+     .menu {
+       display: flex;
+       align-items: center;
+       flex-direction: column;
+       justify-content: center;
+       cursor: pointer;
+
+       &.web {
+         @media screen and (max-width: 768px) {
+           display: none;
+         }
+       }
+
+       &.mobile {
+         display: none;
+
+         @media screen and (max-width: 768px) {
+           display: flex;
+         }
+       }
+
+
+       .menu-title {
+         position: relative;
+         z-index: 1;
+
+         h2 {
+           font-family: "Lavish";
+           font-size: 14px;
+           color: white;
+           letter-spacing: 5px;
+           margin: 0px;
+           text-transform: uppercase;
+         }
+       }
+
+       .menu-container {
+         position: fixed;
+         top: 0;
+         right: 0;
+         width: 15rem;
+         height: 100vh;
+         background-color: #444;
+         z-index: 1;
+         display: flex;
+         align-items: flex-start;
+         justify-content: space-evenly;
+         opacity: 0;
+         visibility: hidden;
+         pointer-events: none;
+         transform: translateX(100%);
+         transition:
+           opacity 0.5s,
+           transform 0.5s,
+           visibility 0.5s;
+
+
+         .menu-list {
+           margin-top: 3rem;
+           width: 100%;
+           height: calc(100vh - 6rem);
+           padding: 2rem;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: space-between;
+
+           @media screen and (max-width: 768px) {
+             height: fit-content !important;
+           }
+
+           .close-container {
+             width: 1rem;
+             height: 1rem;
+             align-self: end;
+
+             app-svg-icons,
+             ::ng-deep svg {
+               width: 100%;
+               height: 100%;
+               color: white;
+             }
+           }
+
+           .top-menu,
+           .bottom-menu {
+             width: 100%;
+             height: fit-content;
+             display: flex;
+             flex-direction: column;
+
+             li {
+               font-family: "Chroma Jeans";
+               font-size: 25px;
+               color: white;
+               letter-spacing: 2px;
+               margin: 1rem 0rem;
+               list-style-type: none;
+
+               &:hover {
+                 cursor: pointer;
+                 color: #6d1111;
+                 transition-duration: 0.5s;
+               }
+             }
+
+           }
+
+           .top-menu {
+             display: flex;
+             align-items: start;
+             justify-content: space-evenly;
+           }
+
+           .bottom-menu {
+
+             li {
+               font-size: 25px !important;
+
+               &:hover {
+                 cursor: default !important;
+                 color: white !important;
+               }
+             }
+
+             .social {
+               display: flex;
+               flex-direction: row;
+               border-top: 10px solid #ffffff;
+               padding-top: 1rem;
+
+               .icon-container {
+                 width: 2.5rem;
+                 height: 2.5rem;
+                 margin: 0px 3px;
+
+                 app-svg-icons,
+                 ::ng-deep svg {
+                   width: 100%;
+                   height: 100%;
+                   display: block;
+                   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                   &:hover {
+                     cursor: pointer;
+                     position: relative;
+                     transform: translateY(-5px) scale(1.03);
+                   }
+                 }
+               }
+             }
+           }
+         }
+       }
+     }
+
+     .menu:hover .menu-container,
+     .menu-container:hover,
+     .menu.active,
+     .menu-container.active {
+       opacity: 1 !important;
+       visibility: visible !important;
+       pointer-events: auto !important;
+       transform: translateX(0%) !important;
+     }
+   }

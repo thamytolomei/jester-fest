@@ -1,0 +1,68 @@
+<div class="navbar">
+  <div class="logo">
+    <app-svg-icons name="logo-horizontal"></app-svg-icons>
+  </div>
+  <div class="title-container">
+    <h1 *ngIf="router.url === '/home' || router.url === ''">Jester Fest</h1>
+    <h1 *ngIf="router.url === '/editions'">Edições</h1>
+    <h1 *ngIf="router.url === '/gallery'">Galeria</h1>
+    <h1 *ngIf="router.url === '/tickets'">Ingressos</h1>
+  </div>
+  <div class="content menu web">
+    <div class="menu-title">
+      <h2>Menu</h2>
+    </div>
+    <div class="menu-container">
+      <div class="menu-list">
+        <div class="top-menu">
+          <li class="menu-item" (click)="redirectTo('home')">Início</li>
+          <li class="menu-item" (click)="redirectTo('editions')">Edições</li>
+          <li class="menu-item" (click)="redirectTo('tickets')">Ingressos</li>
+          <li class="menu-item" (click)="redirectTo('gallery')">Galeria</li>
+          <!-- <li class="menu-item" (click)="redirectTo('production')">Produção</li> -->
+        </div>
+        <div class="bottom-menu">
+          <li class="menu-item">Contato</li>
+          <div class="social">
+            <div class="icon-container">
+              <app-svg-icons name="instagram"></app-svg-icons>
+            </div>
+            <div class="icon-container">
+              <app-svg-icons name="email"></app-svg-icons>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content menu mobile">
+    <div class="menu-title" (click)="toggleMenu()">
+      <h2>Menu</h2>
+    </div>
+    <div class="menu-container" *ngIf="openMenu" [class.active]="openMenu">
+      <div class="menu-list">
+        <div class="close-container">
+          <app-svg-icons name="close" (click)="toggleMenu()"></app-svg-icons>
+        </div>
+        <div class="top-menu">
+          <li class="menu-item" (click)="redirectTo('home')">Início</li>
+          <li class="menu-item" (click)="redirectTo('editions')">Edições</li>
+          <li class="menu-item" (click)="redirectTo('tickets')">Ingressos</li>
+          <li class="menu-item" (click)="redirectTo('gallery')">Galeria</li>
+          <!-- <li class="menu-item" (click)="redirectTo('production')">Produção</li> -->
+        </div>
+        <div class="bottom-menu">
+          <li class="menu-item">Contato</li>
+          <div class="social">
+            <div class="icon-container">
+              <app-svg-icons name="instagram"></app-svg-icons>
+            </div>
+            <div class="icon-container">
+              <app-svg-icons name="email"></app-svg-icons>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/jester-fest",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

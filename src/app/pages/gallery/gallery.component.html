@@ -1,0 +1,32 @@
+<div class="page-gallery">
+  <div class="decor mobile">
+    <hr>
+    <div class="icon-container">
+      <img src="/assets/img/diamond.svg" alt="">
+    </div>
+    <hr>
+  </div>
+  <div class="left">
+    <div class="decor web">
+      <hr class="vertical">
+      <div class="icon-container">
+        <img src="/assets/img/diamond.svg" alt="">
+      </div>
+      <hr class="vertical">
+    </div>
+  </div>
+  <div class="right">
+    <div class="title">
+      <h1>1. Jester no Camaleão</h1>
+    </div>
+    <div class="feed-gallery">
+      <div class="photo tooltip" *ngFor="let photo of photos$ | async" (click)="openGallery(photo)">
+        <img [src]="photo?.url" [alt]="photo.filename" />
+        <span class="tooltip-text">{{ photo.nameAlt }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-gallery-modal *ngIf="galleryOpen && currentPhoto" [photoViewing]="currentPhoto.url"
+  (emitClose)="closeModal($event)"></app-gallery-modal>

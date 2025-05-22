@@ -1,0 +1,253 @@
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientMoveReverse {
+  0% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.tickets-page {
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0vh;
+    background-image: url(/assets/img/stars2.gif);
+    background-repeat: repeat;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .page-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 5vh;
+    }
+
+    .card-feed {
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      justify-content: start;
+      height: 100%;
+
+       @media screen and (max-width: 768px) {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+
+        .pixta-card{
+          width: 75% !important;
+          height: 14rem !important;
+          padding: 1.5rem !important;
+          cursor: pointer !important;
+
+          .left-card{
+            width: fit-content !important;
+            height: fit-content !important;
+
+            .pixta-logo{
+              width: 8rem !important;
+            }
+
+            .pixta-title{
+              width: 75% !important;
+
+              h1{
+                font-size: 16px !important;
+              }
+
+              span{
+                font-size: 14px !important;
+              }
+            }
+
+            .button{
+              width: 8rem !important;
+              padding: 0.3rem !important;
+
+              span{
+                font-size: 15px !important;
+              }
+            }
+          }
+
+          .logo-simple{
+            width: 8rem !important;
+
+            img{
+              margin-left: 1rem;
+            }
+          }
+        }
+       }
+
+      .pixta-card {
+        background: linear-gradient(270deg, #ff7eb3, #65d6ce, #8ac926, #ffca3a, #ff7eb3);
+        background-size: 1000% 1000%;
+        border-radius: 20px;
+        border: 1px solid #ffffff;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem;
+        width: 30rem;
+        height: 16rem;
+        animation: gradientMove 10s ease infinite;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin: 1rem;
+        position: relative;
+
+        &.odd{
+          background: linear-gradient(90deg, #ff7eb3, #645bdf, #65d6ce, #ffca3a, #8ac926);
+          background-size: 1000% 1000%;
+          animation: gradientMoveReverse 10s ease infinite;
+        }
+
+        &:hover {
+          cursor: pointer;
+          position: relative;
+          transform: translateY(-8px) scale(1.03);
+          -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.16);
+          -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.16);
+        }
+
+        .left-card{
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          justify-content: space-between;
+          width: 60%;
+          height: 100%;
+          border-right: 2px dashed white;
+          .pixta-logo {
+            width: 12rem;
+            height: auto;
+
+            app-svg-icons,
+            ::ng-deep svg {
+              width: 100%;
+              height: auto;
+              color: white;
+            }
+          }
+
+          .pixta-title {
+            display: flex;
+            flex-direction: column;
+
+            h1,
+            span {
+              font-family: 'Ginger';
+              font-size: 18px;
+              color: white;
+              margin: 1rem 0rem;
+            }
+
+            span {
+              font-size: 16px;
+            }
+          }
+
+          .button {
+            width: 12rem;
+            padding: 0.8rem;
+            background: linear-gradient(270deg, #ff7eb3, #65d6ce, #8ac926, #ffca3a, #ff7eb3);
+            background-size: 1000% 1000%;
+            color: white;
+            font-family: "Ginger";
+            font-size: 18px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.16);
+            -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.16);
+            box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.16);
+
+            .icon-container {
+              width: 1.5rem;
+              height: auto;
+              display: block;
+              margin-left: 8px;
+              margin-top: 4px;
+
+              app-svg-icons,
+              ::ng-deep svg {
+                width: 100%;
+                height: auto;
+                color: white;
+              }
+            }
+          }
+        }
+
+
+        .logo-simple {
+          display: flex;
+          align-items: start;
+          justify-content: center;
+          // position: absolute;
+          // right: 2rem;
+          // z-index: 1;
+          // bottom: 2rem;
+
+          .img-container {
+            width: 10em;
+            height: auto;
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+}
