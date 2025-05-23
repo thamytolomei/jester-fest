@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BandsComponent } from './pages/bands/bands.component';
 import { TicketsComponent } from './pages/tickets/tickets.component';
-import { ProductionComponent } from './pages/production/production.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SvgIconsComponent } from './components/svg-icons/svg-icons.component';
@@ -20,7 +19,6 @@ import { GalleryModalComponent } from './components/gallery-modal/gallery-modal.
     NavbarComponent,
     BandsComponent,
     TicketsComponent,
-    ProductionComponent,
     GalleryComponent,
     HomeComponent,
     SvgIconsComponent,

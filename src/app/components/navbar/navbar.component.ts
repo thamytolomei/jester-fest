@@ -20,7 +20,6 @@ export class NavbarComponent {
 
   toggleMenu() {
     this.openMenu = !this.openMenu;
-    console.log(this.openMenu, 'openMenu');
   }
 
 }

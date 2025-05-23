@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { BandsComponent } from './pages/bands/bands.component';
 import { TicketsComponent } from './pages/tickets/tickets.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
-import { ProductionComponent } from './pages/production/production.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
@@ -26,10 +25,6 @@ const routes: Routes = [
   {
     path: 'gallery',
     component: GalleryComponent,
-  },
-  {
-    path: 'production',
-    component: ProductionComponent,
   },
 ];
 

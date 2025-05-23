@@ -26,3 +26,6 @@ fs.readdir(imagesDir, function (err, files) {
         }
     });
 });
+//////Instruções - Toda vez que algo na pasta ou no arquivo for alterado, rodar:
+//npx tsc generate-photos-json.ts
+//node generate-photos-json.js
